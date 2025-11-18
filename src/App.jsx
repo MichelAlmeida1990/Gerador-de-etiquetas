@@ -169,9 +169,11 @@ function App() {
               <input
                 id="preco"
                 type="text"
+                inputMode="decimal"
                 value={preco}
                 onChange={(e) => setPreco(e.target.value)}
                 placeholder="Ex: 25,90"
+                autoComplete="off"
               />
             </div>
 
@@ -180,11 +182,13 @@ function App() {
               <div className="codigo-input-group">
                 <input
                   id="codigo"
-                  type="text"
+                  type="tel"
+                  inputMode="numeric"
                   value={codigoBarras}
                   onChange={handleCodigoChange}
                   placeholder="7891234567890"
                   maxLength={13}
+                  autoComplete="off"
                 />
                 <button 
                   type="button" 
@@ -203,10 +207,12 @@ function App() {
               <input
                 id="largura"
                 type="number"
+                inputMode="numeric"
                 value={larguraEtiqueta}
                 onChange={(e) => setLarguraEtiqueta(parseInt(e.target.value) || 80)}
                 min="50"
                 max="150"
+                autoComplete="off"
               />
             </div>
 

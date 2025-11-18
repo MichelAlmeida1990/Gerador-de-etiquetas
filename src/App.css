@@ -32,9 +32,90 @@
   margin-top: 30px;
 }
 
+/* Tablet */
 @media (max-width: 968px) {
   .content {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .app {
+    padding: 15px;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .app {
+    padding: 12px;
+  }
+  
+  .header {
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+  }
+  
+  .header p {
+    font-size: 0.9rem;
+  }
+  
+  .content {
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .formulario,
+  .preview {
+    padding: 20px;
+  }
+  
+  .formulario h2,
+  .preview h2 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .app {
+    padding: 10px;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header p {
+    font-size: 0.85rem;
+  }
+  
+  .formulario,
+  .preview {
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .formulario h2,
+  .preview h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
   }
 }
 
@@ -72,6 +153,8 @@
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .campo input:focus {
@@ -85,6 +168,34 @@
   margin-top: 5px;
   color: #888;
   font-size: 0.85rem;
+}
+
+/* Mobile - inputs maiores para melhor toque */
+@media (max-width: 768px) {
+  .campo {
+    margin-bottom: 18px;
+  }
+  
+  .campo label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  
+  .campo input {
+    padding: 14px;
+    font-size: 16px; /* Evita zoom automático no iOS */
+    border-radius: 6px;
+  }
+  
+  .campo small {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .campo input {
+    padding: 12px;
+  }
 }
 
 .codigo-input-group {
@@ -106,12 +217,40 @@
   font-weight: 600;
   transition: all 0.3s ease;
   white-space: nowrap;
+  min-height: 44px; /* Tamanho mínimo para touch */
+  touch-action: manipulation; /* Remove delay de toque */
 }
 
 .btn-gerar:hover {
   background: #5568d3;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-gerar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+/* Mobile - botão gerar */
+@media (max-width: 768px) {
+  .codigo-input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .btn-gerar {
+    width: 100%;
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-gerar {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
 }
 
 .acoes {
@@ -135,11 +274,46 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  min-height: 48px; /* Tamanho mínimo para touch */
+  touch-action: manipulation; /* Remove delay de toque */
+  -webkit-tap-highlight-color: transparent; /* Remove highlight no mobile */
 }
 
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Mobile - botões */
+@media (max-width: 768px) {
+  .acoes {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+  }
+  
+  .btn {
+    width: 100%;
+    min-width: unset;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .acoes {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
 }
 
 .btn-download {
@@ -192,6 +366,29 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 100%;
+}
+
+/* Mobile - etiqueta responsiva */
+@media (max-width: 768px) {
+  .etiqueta {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 10px;
+  }
+  
+  .preview {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  .etiqueta {
+    padding: 8px;
+    border-radius: 3px;
+  }
 }
 
 .etiqueta-header {
