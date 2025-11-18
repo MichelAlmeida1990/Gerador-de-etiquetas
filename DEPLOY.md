@@ -59,6 +59,8 @@ O arquivo `vercel.json` já está configurado com:
 - ✅ Framework: Vite
 - ✅ Rewrites para SPA (Single Page Application)
 
+O arquivo `.nvmrc` garante que o Node.js versão 18+ seja usado no build.
+
 ## Variáveis de Ambiente
 
 Atualmente não há variáveis de ambiente necessárias. Se precisar adicionar no futuro, configure na Vercel:
